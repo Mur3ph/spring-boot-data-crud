@@ -1,0 +1,10 @@
+<html layout:decorator="layout">
+
+<div layout:fragment="content">
+
+	<h1> Welcome ! </h1>
+	<p th:text="'Full name: ' + ${person.firstName} + ' ' + ${person.lastName}" />
+    <a href="/person/login"> Login </a>
+    
+</div>
+</html>
