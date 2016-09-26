@@ -36,6 +36,10 @@ public class PersonController
     {
     	LOGGER.info("+login()");
     	Person person = repository.findOneByUsername(username);
+    	if(person == null)
+    	{
+    		return "exceptions/error";
+    	}
         model.addAttribute("person", person);
         return "person/home";
     }

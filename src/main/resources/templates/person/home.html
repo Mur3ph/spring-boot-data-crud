@@ -2,9 +2,11 @@
 
 <div layout:fragment="content">
 
+ <div class="text-center" style="padding-top:50px">
 	<h1> Welcome ! </h1>
 	<p th:text="'Full name: ' + ${person.firstName} + ' ' + ${person.lastName}" />
-    <a href="/person/login"> Login </a>
-    
+    <a class="btn btn-primary" href="/person/login"> Login </a>
+ </div>
+ 
 </div>
 </html>

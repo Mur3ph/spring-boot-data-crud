@@ -8,5 +8,4 @@ public interface PersonRepository extends CrudRepository<Person, Long>
 {
 //	Optional<Person> findOneByUsername(String username);
 	Person findOneByUsername(String username);
-
 }
