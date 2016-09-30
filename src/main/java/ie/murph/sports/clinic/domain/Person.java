@@ -30,6 +30,7 @@ public class Person
 
 	private String email;
 
+	@Column(name="password")
 	private String password;
 
 	public Person() {

@@ -32,10 +32,11 @@ public class PersonController
     
     //Where to go after the login success page
     @RequestMapping(value="/login", method=RequestMethod.POST)
-    public String loginSubmit(@RequestParam(value = "username", required = false) String username, Model model) 
+    public String loginSubmit(@RequestParam(value = "username", required = false) String username, @RequestParam(value = "password", required = false) String password, Model model) 
     {
     	LOGGER.info("+login()");
-    	Person person = repository.findOneByUsername(username);
+    	Person person = repository.findPersonByUsername(username, password);
+//    	Person person = repository.findPersonByUsername(username);
     	if(person == null)
     	{
     		return "exceptions/error";
