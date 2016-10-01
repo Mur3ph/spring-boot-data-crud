@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ie.murph.sports.clinic.domain.Person;
-import ie.murph.sports.clinic.repository.PersonRepository;
+import ie.murph.sports.clinic.service.PersonService;
 
 @Controller
 @RequestMapping("/person")
@@ -19,13 +19,13 @@ public class PersonController
 	private static final Logger LOGGER = LoggerFactory.getLogger(PersonController.class);
 	
 	@Autowired
-    private PersonRepository repository;
+	private PersonService personService;
 
 	//Allows access to the Login page
     @RequestMapping(value="/login", method=RequestMethod.GET)
     public String loginForm(Model model) 
     {
-    	LOGGER.info("+login()");
+    	LOGGER.info("+loginForm()");
         model.addAttribute("person", new Person());
         return "person/login";
     }
@@ -34,12 +34,11 @@ public class PersonController
     @RequestMapping(value="/login", method=RequestMethod.POST)
     public String loginSubmit(@RequestParam(value = "username", required = false) String username, @RequestParam(value = "password", required = false) String password, Model model) 
     {
-    	LOGGER.info("+login()");
-    	Person person = repository.findPersonByUsername(username, password);
-//    	Person person = repository.findPersonByUsername(username);
+    	LOGGER.info("+loginSubmit()");
+    	Person person = personService.login(username, password);
     	if(person == null)
     	{
-    		return "exceptions/error";
+    		return "exceptions/login-unsuccessful";
     	}
         model.addAttribute("person", person);
         return "person/home";
