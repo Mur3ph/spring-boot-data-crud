@@ -11,10 +11,13 @@ public interface PersonRepository extends CrudRepository<Person, Long>
 //	Optional<Person> findOneByUsername(String username);
 	Person findPersonByUsername(String username);
 	
+	// In the HQL , you should use the java class name and property name 
+	// of the mapped @Entity instead of the actual table name and column 
+	// name , so the HQL should be :
 	@Query("SELECT p FROM Person p WHERE p.username = :username AND p.password = :password")
 	Person findPersonByUsername(@Param("username") String username, @Param("password")String password);
 //	
-//	@Query("SELECT COUNT(*) FROM person p WHERE p.username = :username AND p.password = :password")
+//	@Query("SELECT firstName, lastName FROM Person p WHERE p.username = :username AND p.password = :password")
 //	int findUserByUsernameAndPasswordForLogin2(@Param("username") String username, @Param("password")String password);
 //	
 //	@Query("")
