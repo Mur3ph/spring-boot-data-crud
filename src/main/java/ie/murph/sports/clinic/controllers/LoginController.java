@@ -43,5 +43,14 @@ public class LoginController
         model.addAttribute("person", person);
         return "person/home";
     }
+    
+    //Allows access to the Login page
+    @RequestMapping(value="/home", method=RequestMethod.GET)
+    public String homePage(Model model) 
+    {
+    	LOGGER.info("+homePage()");
+        model.addAttribute("person", new Person());
+        return "person/home";
+    }
 
 }

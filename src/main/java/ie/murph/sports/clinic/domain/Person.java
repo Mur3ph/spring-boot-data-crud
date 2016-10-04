@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "person")
 public class Person 
 {
-	private static final long serialVersionUID = -1801714432822866390L;
+	//private static final long serialVersionUID = -1801714432822866390L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
