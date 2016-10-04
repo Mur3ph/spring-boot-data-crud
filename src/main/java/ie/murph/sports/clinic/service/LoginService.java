@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ie.murph.sports.clinic.domain.Person;
-import ie.murph.sports.clinic.repository.PersonRepository;
+import ie.murph.sports.clinic.repository.LoginRepository;
 
 @Service
-public class PersonService 
+public class LoginService 
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(PersonService.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(LoginService.class);
 
 	@Autowired
-    private PersonRepository repository;
+    private LoginRepository repository;
 	
 	public Person login(String username, String password)
 	{

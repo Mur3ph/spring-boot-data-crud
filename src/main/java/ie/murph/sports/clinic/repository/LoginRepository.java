@@ -6,7 +6,7 @@ import org.springframework.data.repository.query.Param;
 
 import ie.murph.sports.clinic.domain.Person;
 
-public interface PersonRepository extends CrudRepository<Person, Long> 
+public interface LoginRepository extends CrudRepository<Person, Long> 
 {
 //	Optional<Person> findOneByUsername(String username);
 	Person findPersonByUsername(String username);

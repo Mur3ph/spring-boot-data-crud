@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ie.murph.sports.clinic.domain.Person;
-import ie.murph.sports.clinic.service.PersonService;
+import ie.murph.sports.clinic.service.LoginService;
 
 @Controller
 @RequestMapping("/person")
-public class PersonController 
+public class LoginController 
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(PersonController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 	
 	@Autowired
-	private PersonService personService;
+	private LoginService personService;
 
 	//Allows access to the Login page
     @RequestMapping(value="/login", method=RequestMethod.GET)
