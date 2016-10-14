@@ -23,12 +23,11 @@ public class LoginController
 	@Autowired
 	private LoginService personService;
 
-	//Allows access to the Login page
     @RequestMapping(value="/login", method=RequestMethod.GET)
-    public String loginForm(Model model) 
+    public String allowAccessToLoginPage(Model model) 
     {
-    	LOGGER.info("+loginForm()");
-        model.addAttribute("person", new Person());
+    	LOGGER.info("+allowAccessToLoginPage()");
+    	saveUsersDetailsToSession(model, new Person());
         return urlPersonLogin;
     }
     
@@ -36,9 +35,9 @@ public class LoginController
     @RequestMapping(value="/login", method=RequestMethod.POST)
     public String submitLoginUsernameAndPassword(@RequestParam(value = "username", required = false) String username, @RequestParam(value = "password", required = false) String password, Model model) 
     {
-    	LOGGER.info("+loginSubmit()");
+    	LOGGER.info("+submitLoginUsernameAndPassword()");
     	Person person = personService.login(username, password);
-    	addUsersDetailsToSession(model, person);
+    	saveUsersDetailsToSession(model, person);
         return url(person);
     }
     
@@ -56,7 +55,7 @@ public class LoginController
     	return url;
     }
     
-    private void addUsersDetailsToSession(Model model, Person person)
+    private void saveUsersDetailsToSession(Model model, Person person)
     {
     	 model.addAttribute("person", person);
     }
