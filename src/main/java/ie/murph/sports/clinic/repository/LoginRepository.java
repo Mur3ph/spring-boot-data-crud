@@ -15,11 +15,9 @@ public interface LoginRepository extends CrudRepository<Person, Long>
 	// of the mapped @Entity instead of the actual table name and column 
 	// name , so the HQL should be :
 	@Query("SELECT p FROM Person p WHERE p.username = :username AND p.password = :password")
-	Person findPersonByUsername(@Param("username") String username, @Param("password")String password);
+	Person findPersonByUsernameAndPassword(@Param("username") String username, @Param("password")String password);
 //	
 //	@Query("SELECT firstName, lastName FROM Person p WHERE p.username = :username AND p.password = :password")
 //	int findUserByUsernameAndPasswordForLogin2(@Param("username") String username, @Param("password")String password);
-//	
-//	@Query("")
-//	Person findUserByUsernameAndPassword(String username, String password);
+
 }

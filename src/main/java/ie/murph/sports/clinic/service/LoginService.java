@@ -19,7 +19,7 @@ public class LoginService
 	public Person login(String username, String password)
 	{
 		LOGGER.info("+login()");
-		Person person = repository.findPersonByUsername(username, password);
+		Person person = repository.findPersonByUsernameAndPassword(username, password);
 		return person;
 	}
 }
