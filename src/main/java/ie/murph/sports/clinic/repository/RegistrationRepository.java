@@ -1,8 +1,6 @@
 package ie.murph.sports.clinic.repository;
 
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 
 import ie.murph.sports.clinic.domain.Person;
 
@@ -12,5 +10,5 @@ public interface RegistrationRepository extends CrudRepository<Person, Long> {
 		// of the mapped @Entity instead of the actual table name and column 
 		// name , so the HQL should be :
 		// @Query("SELECT p FROM Person p WHERE p.username = :username AND p.password = :password")
-		Person registerNewUser(@Param("username") String username, @Param("password")String password);
+		//Person registerNewUser(@Param("username") String username, @Param("password")String password);
 }

@@ -19,6 +19,8 @@ public class LoginController
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 	private static final String urlPersonHome = "person/home";
 	private static final String urlPersonLogin = "person/login";
+	private static final String urlUnsuccessfulLogin = "exceptions/login-unsuccessful";
+	private static Person person;
 	
 	@Autowired
 	private LoginService personService;
@@ -36,17 +38,17 @@ public class LoginController
     public String submitLoginUsernameAndPassword(@RequestParam(value = "username", required = false) String username, @RequestParam(value = "password", required = false) String password, Model model) 
     {
     	LOGGER.info("+submitLoginUsernameAndPassword()");
-    	Person person = personService.login(username, password);
+    	person = personService.login(username, password);
     	saveUsersDetailsToSession(model, person);
-        return url(person);
+        return url();
     }
     
-    private String url(Person person)
+    private String url()
     {
     	String url = "";
-    	if(person.getUsername() == null)
+    	if(person == null)
     	{
-    		url = "exceptions/login-unsuccessful";
+    		url = urlUnsuccessfulLogin;
     	}
     	else
     	{
