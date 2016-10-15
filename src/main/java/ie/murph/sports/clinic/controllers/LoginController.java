@@ -29,8 +29,13 @@ public class LoginController
     public String allowAccessToLoginPage(Model model) 
     {
     	LOGGER.info("+allowAccessToLoginPage()");
-    	saveUsersDetailsToSession(model, new Person());
+    	passPersonObjectToLoginPage(model);
         return urlPersonLogin;
+    }
+    
+    private void passPersonObjectToLoginPage(Model model)
+    {
+    	 model.addAttribute("person", new Person());
     }
     
     //Where to go after the login success page
@@ -38,15 +43,20 @@ public class LoginController
     public String submitLoginUsernameAndPassword(@RequestParam(value = "username", required = false) String username, @RequestParam(value = "password", required = false) String password, Model model) 
     {
     	LOGGER.info("+submitLoginUsernameAndPassword()");
-    	person = personService.login(username, password);
-    	saveUsersDetailsToSession(model, person);
+    	person = personService.checkIfPersonExists(username, password);
+    	saveUsersPersonalDetailsForHomePage(model, person);
         return url();
+    }
+    
+    private void saveUsersPersonalDetailsForHomePage(Model model, Person person)
+    {
+    	 model.addAttribute("person", person);
     }
     
     private String url()
     {
     	String url = "";
-    	if(person == null)
+    	if(pesonIsNull())
     	{
     		url = urlUnsuccessfulLogin;
     	}
@@ -57,9 +67,9 @@ public class LoginController
     	return url;
     }
     
-    private void saveUsersDetailsToSession(Model model, Person person)
+    private boolean pesonIsNull()
     {
-    	 model.addAttribute("person", person);
+    	return person == null;
     }
     
     @RequestMapping(value="/home", method=RequestMethod.GET)

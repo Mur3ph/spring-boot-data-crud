@@ -16,7 +16,7 @@ public class LoginService
 	@Autowired
     private LoginRepository repository;
 	
-	public Person login(String username, String password)
+	public Person checkIfPersonExists(String username, String password)
 	{
 		LOGGER.info("+login()");
 		Person person = repository.findPersonByUsernameAndPassword(username, password);

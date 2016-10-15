@@ -14,14 +14,19 @@ import ie.murph.sports.clinic.domain.Person;
 public class RegistrationController 
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
+	private static final String personRegisterUrl = "person/register";
 
-	//Allows access to the Registration page
     @RequestMapping(value="/register", method=RequestMethod.GET)
-    public String registerForm(Model model) 
+    public String allowAccessToRegisterPersonDetailsPage(Model model) 
     {
     	LOGGER.info("+registerForm()");
-        model.addAttribute("person", new Person());
-        return "person/register";
+    	passPersonObjectToRegisterPage(model);
+        return personRegisterUrl;
+    }
+    
+    private void passPersonObjectToRegisterPage(Model model)
+    {
+    	 model.addAttribute("person", new Person());
     }
 
 }
