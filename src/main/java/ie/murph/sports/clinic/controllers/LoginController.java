@@ -43,7 +43,7 @@ public class LoginController
     public String submitLoginUsernameAndPassword(@RequestParam(value = "username", required = false) String username, @RequestParam(value = "password", required = false) String password, Model model) 
     {
     	LOGGER.info("+submitLoginUsernameAndPassword()");
-    	person = personService.checkIfPersonExists(username, password);
+    	person = personService.doesPersonExist(username, password);
     	saveUsersPersonalDetailsForHomePage(model, person);
         return url();
     }
