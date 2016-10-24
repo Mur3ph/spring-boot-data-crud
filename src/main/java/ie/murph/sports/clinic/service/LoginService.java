@@ -18,7 +18,7 @@ public class LoginService
 	
 	public Person doesPersonExist(String username, String password)
 	{
-		LOGGER.info("+login()");
+		LOGGER.info("+doesPersonExist()");
 		Person person = repository.findPersonByUsernameAndPassword(username, password);
 		return person;
 	}
