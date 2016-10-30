@@ -18,7 +18,7 @@ public class RegistrationService
 	
 	public void savePersonDetails(Person person)
 	{
-		LOGGER.info("+doesPersonExist()");
+		LOGGER.info("+savePersonDetails()");
 		repository.save(person);
 	}
 }

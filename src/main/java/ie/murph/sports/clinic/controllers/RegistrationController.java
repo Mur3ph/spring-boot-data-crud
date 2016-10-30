@@ -7,18 +7,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import ie.murph.sports.clinic.domain.Person;
-import ie.murph.sports.clinic.service.LoginService;
 import ie.murph.sports.clinic.service.RegistrationService;
 
 @Controller
 @RequestMapping("/person")
 public class RegistrationController 
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
-	private static final String personRegisterUrl = "person/register";
+	private static final Logger LOGGER = LoggerFactory.getLogger(RegistrationController.class);
+	private static final String redirectToPersonRegisterUrl = "person/register";
+	private static final String redirectToPersonalLoginPageUrl = "person/login";
 	
 	@Autowired
 	private RegistrationService registerService;
@@ -28,7 +27,7 @@ public class RegistrationController
     {
     	LOGGER.info("+allowAccessToRegisterPersonDetailsPage()");
     	passPersonObjectToRegisterPage(model);
-        return personRegisterUrl;
+        return redirectToPersonRegisterUrl;
     }
     
     private void passPersonObjectToRegisterPage(Model model)
@@ -39,9 +38,9 @@ public class RegistrationController
     @RequestMapping(value="/register", method=RequestMethod.POST)
     public String submitPersonalDetailsForRegistration(Person person, Model model) 
     {
-    	LOGGER.info("+submitLoginUsernameAndPassword()");
+    	LOGGER.info("+submitPersonalDetailsForRegistration()");
     	registerService.savePersonDetails(person);
-        return "person/login";
+        return redirectToPersonalLoginPageUrl;
     }
     
 }
