@@ -19,7 +19,7 @@ public class RegistrationController
     @RequestMapping(value="/register", method=RequestMethod.GET)
     public String allowAccessToRegisterPersonDetailsPage(Model model) 
     {
-    	LOGGER.info("+registerForm()");
+    	LOGGER.info("+allowAccessToRegisterPersonDetailsPage()");
     	passPersonObjectToRegisterPage(model);
         return personRegisterUrl;
     }
