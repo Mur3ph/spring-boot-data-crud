@@ -7,7 +7,7 @@
 		  <div class="row">
 		  	<div class="col-md-6">
 		    
-		          <form class="form-horizontal" action="" method="POST">
+		          <form id="register-person-form" class="form-register" th:action="@{/person/register}" th:object="${person}" method="post">
 		          <fieldset>
 		            <div id="legend">
 		              <legend class="">Register</legend>
@@ -16,7 +16,7 @@
 		            <div class="control-group">
 		              <label class="control-label" for="firstname">First Name</label>
 		              <div class="controls">
-		                <input id="firstname" name="firstname" placeholder="" class="form-control input-lg" type="text"/>
+		                <input id="firstname" name="firstname" placeholder="First Name" class="form-control input-lg" type="text" th:field="*{firstName}" th:value="${firstName}"/>
 		                <p class="help-block">First name can contain only letters, without spaces!</p>
 		              </div>
 		            </div>
@@ -24,7 +24,7 @@
 		            <div class="control-group">
 		              <label class="control-label" for="surname">Surname</label>
 		              <div class="controls">
-		                <input id="surname" name="surname" placeholder="" class="form-control input-lg" type="text"/>
+		                <input id="surname" name="surname" placeholder="Surname" class="form-control input-lg" type="text" th:field="*{lastName}" th:value="${lastName}"/>
 		                <p class="help-block">Surname can contain only letters, without spaces!</p>
 		              </div>
 		            </div>
@@ -32,7 +32,7 @@
 		            <div class="control-group">
 		              <label class="control-label" for="username">Username</label>
 		              <div class="controls">
-		                <input id="username" name="username" placeholder="" class="form-control input-lg" type="text"/>
+		                <input id="username" name="username" placeholder="Username" class="form-control input-lg" type="text" th:field="*{username}" th:value="${username}"/>
 		                <p class="help-block">Username can contain any letters or numbers, without spaces!</p>
 		              </div>
 		            </div>
@@ -40,7 +40,7 @@
 		            <div class="control-group">
 		              <label class="control-label" for="email">E-mail</label>
 		              <div class="controls">
-		                <input id="email" name="email" placeholder="" class="form-control input-lg" type="email"/>
+		                <input id="email" name="email" placeholder="E-mail Address" class="form-control input-lg" type="email" th:field="*{email}" th:value="${email}"/>
 		                <p class="help-block">Please provide your E-mail address</p>
 		              </div>
 		            </div>
@@ -48,7 +48,7 @@
 		            <div class="control-group">
 		              <label class="control-label" for="age">Age</label>
 		              <div class="controls">
-		                <input id="age" name="age" placeholder="" class="form-control input-lg" type="text"/>
+		                <input id="age" name="age" placeholder="Age" class="form-control input-lg" type="text" th:field="*{age}" th:value="${age}"/>
 		                <p class="help-block">Age can contain only numbers, without spaces!</p>
 		              </div>
 		            </div>
@@ -56,7 +56,7 @@
 		            <div class="control-group">
 		              <label class="control-label" for="password">Password</label>
 		              <div class="controls">
-		                <input id="password" name="password" placeholder="" class="form-control input-lg" type="password"/>
+		                <input id="password" name="password" placeholder="Password" class="form-control input-lg" type="password" th:field="*{password}" th:value="${password}"/>
 		                <p class="help-block">Password should be at least 6 characters</p>
 		              </div>
 		            </div>
@@ -64,7 +64,7 @@
 		            <div class="control-group">
 		              <label class="control-label" for="password_confirm">Password (Confirm)</label>
 		              <div class="controls">
-		                <input id="password_confirm" name="password_confirm" placeholder="" class="form-control input-lg" type="password"/>
+		                <input id="password_confirm" name="password_confirm" placeholder="Password (Confirm)" class="form-control input-lg" type="password"/>
 		                <p class="help-block">Please confirm password</p>
 		              </div>
 		            </div>

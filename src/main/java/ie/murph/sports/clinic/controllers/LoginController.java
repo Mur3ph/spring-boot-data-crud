@@ -23,7 +23,7 @@ public class LoginController
 	private static Person person;
 	
 	@Autowired
-	private LoginService personService;
+	private LoginService loginService;
 
     @RequestMapping(value="/login", method=RequestMethod.GET)
     public String allowAccessToLoginPage(Model model) 
@@ -43,7 +43,7 @@ public class LoginController
     public String submitLoginUsernameAndPassword(@RequestParam(value = "username", required = false) String username, @RequestParam(value = "password", required = false) String password, Model model) 
     {
     	LOGGER.info("+submitLoginUsernameAndPassword()");
-    	person = personService.doesPersonExist(username, password);
+    	person = loginService.doesPersonExist(username, password);
     	saveUsersPersonalDetailsForHomePage(model, person);
         return url();
     }
