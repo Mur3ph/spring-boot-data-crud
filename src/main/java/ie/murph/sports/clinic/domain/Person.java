@@ -23,20 +23,20 @@ public class Person
 	@Column(name = "last_name", nullable = false)
 	private String lastName;
 
-	private int age;
-
 	@Column(name="username")
 	private String username;
 
-	private String email;
-
 	@Column(name="password")
 	private String password;
+	
+	@Column(name="email")
+	private String email;
+	
+	@Column(name="age")
+	private int age;
 
 	public Person() {
 	}
-
-	// protected PersonEntity(){}
 
 	public Person(String firstName, String lastName, int age, String email, String password, String username) {
 		this.firstName = firstName;
