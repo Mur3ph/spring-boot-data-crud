@@ -18,7 +18,7 @@ public class Person
 	private long person_id;
 
 	@Column(name = "first_name", nullable = false)
-	private String firstName;
+	private String personFirstName;
 
 	@Column(name = "last_name", nullable = false)
 	private String lastName;
@@ -38,8 +38,8 @@ public class Person
 	public Person() {
 	}
 
-	public Person(String firstName, String lastName, int age, String email, String password, String username) {
-		this.firstName = firstName;
+	public Person(String personFirstName, String lastName, int age, String email, String password, String username) {
+		this.personFirstName = personFirstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.username = username;
@@ -55,12 +55,12 @@ public class Person
 		this.person_id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getPersonFirstName() {
+		return personFirstName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setPersonFirstName(String personFirstName) {
+		this.personFirstName = personFirstName;
 	}
 
 	public String getLastName() {
@@ -105,7 +105,7 @@ public class Person
 
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append(this.getId()).append(", ").append(this.getFirstName()).append(", ").append(this.getLastName())
+		builder.append(this.getId()).append(", ").append(this.getPersonFirstName()).append(", ").append(this.getLastName())
 				.append(", ").append(this.getEmail()).append(", ").append(this.getAge());
 
 		return builder.toString();
