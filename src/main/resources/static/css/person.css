@@ -1,0 +1,15 @@
+/* @CHARSET "ISO-8859-1"; */
+
+/* @import url('http://getbootstrap.com/dist/css/bootstrap.css');
+
+
+ html, body, .container-table {
+    height: 100%;
+}
+.container-table {
+    width: 10%;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
