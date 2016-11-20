@@ -3,9 +3,6 @@
 /* @import url('http://getbootstrap.com/dist/css/bootstrap.css'); */
 
 .container-table {
-    width: 10%;
-}
-.vertical-center-row {
-    display: table-cell;
-    vertical-align: middle;
+    margin: 0 auto;
+    width:40%             /* value of your choice which suits your alignment */
 }
