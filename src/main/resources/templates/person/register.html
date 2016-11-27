@@ -16,7 +16,7 @@
 		            <div class="control-group">
 		              <label class="control-label" for="firstname">First Name</label>
 		              <div class="controls">
-		                <input id="firstname" name="firstname" placeholder="First Name" class="form-control input-lg" type="text" th:field="*{firstName}" th:value="${firstName}"/>
+		                <input id="firstname" name="firstname" placeholder="First Name" class="form-control input-lg" type="text" th:field="*{personFirstName}" th:value="${personFirstName}"/>
 		                <p class="help-block">First name can contain only letters, without spaces!</p>
 		              </div>
 		            </div>
@@ -34,22 +34,6 @@
 		              <div class="controls">
 		                <input id="username" name="username" placeholder="Username" class="form-control input-lg" type="text" th:field="*{username}" th:value="${username}"/>
 		                <p class="help-block">Username can contain any letters or numbers, without spaces!</p>
-		              </div>
-		            </div>
-		         
-		            <div class="control-group">
-		              <label class="control-label" for="email">E-mail</label>
-		              <div class="controls">
-		                <input id="email" name="email" placeholder="E-mail Address" class="form-control input-lg" type="email" th:field="*{email}" th:value="${email}"/>
-		                <p class="help-block">Please provide your E-mail address</p>
-		              </div>
-		            </div>
-		            
-		            <div class="control-group">
-		              <label class="control-label" for="age">Age</label>
-		              <div class="controls">
-		                <input id="age" name="age" placeholder="Age" class="form-control input-lg" type="text" th:field="*{age}" th:value="${age}"/>
-		                <p class="help-block">Age can contain only numbers, without spaces!</p>
 		              </div>
 		            </div>
 		         

@@ -29,10 +29,8 @@ public class Person
 	@Column(name="password")
 	private String password;
 	
-	@Column(name="email")
 	private String email;
 	
-	@Column(name="age")
 	private int age;
 
 	public Person() {
