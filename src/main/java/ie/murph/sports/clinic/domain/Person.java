@@ -29,19 +29,13 @@ public class Person
 	@Column(name="password")
 	private String password;
 	
-	private String email;
-	
-	private int age;
-
 	public Person() {
 	}
 
-	public Person(String personFirstName, String lastName, int age, String email, String password, String username) {
+	public Person(String personFirstName, String lastName, String password, String username) {
 		this.personFirstName = personFirstName;
 		this.lastName = lastName;
-		this.age = age;
 		this.username = username;
-		this.email = email;
 		this.password = password;
 	}
 
@@ -69,28 +63,12 @@ public class Person
 		this.lastName = lastName;
 	}
 
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 	public String getUsername() {
 		return username;
 	}
 
 	public void setUsername(String username) {
 		this.username = username;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getPassword() {
@@ -103,9 +81,7 @@ public class Person
 
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append(this.getId()).append(", ").append(this.getPersonFirstName()).append(", ").append(this.getLastName())
-				.append(", ").append(this.getEmail()).append(", ").append(this.getAge());
-
+		builder.append(this.getId()).append(", ").append(this.getPersonFirstName()).append(", ").append(this.getLastName());
 		return builder.toString();
 	}
 }
