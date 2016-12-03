@@ -3,53 +3,48 @@
 
 <div layout:fragment="content">
 
-        <div class="container">
+        <div class="container col-md-10 col-md-offset-4">
 		  <div class="row">
 		  	<div class="col-md-6">
 		    
 		          <form id="register-person-form" class="form-register" th:action="@{/person/register}" th:object="${person}" method="post">
 		          <fieldset>
 		            <div id="legend">
-		              <legend class="">Register</legend>
+		              <legend>Register</legend>
 		            </div>
 		            
 		            <div class="control-group">
 		              <label class="control-label" for="firstname">First Name</label>
 		              <div class="controls">
-		                <input id="firstname" name="firstname" placeholder="First Name" class="form-control input-lg" type="text" th:field="*{personFirstName}" th:value="${personFirstName}"/>
-		                <p class="help-block">First name can contain only letters, without spaces!</p>
+		                <input id="firstname" name="firstname" placeholder="First name can contain only letters, without spaces!" class="form-control input-lg" type="text" th:field="*{personFirstName}" th:value="${personFirstName}"/>
 		              </div>
 		            </div>
 		            
 		            <div class="control-group">
 		              <label class="control-label" for="surname">Surname</label>
 		              <div class="controls">
-		                <input id="surname" name="surname" placeholder="Surname" class="form-control input-lg" type="text" th:field="*{lastName}" th:value="${lastName}"/>
-		                <p class="help-block">Surname can contain only letters, without spaces!</p>
+		                <input id="surname" name="surname" placeholder="Surname can contain only letters, without spaces!" class="form-control input-lg" type="text" th:field="*{lastName}" th:value="${lastName}"/>
 		              </div>
 		            </div>
 		            
 		            <div class="control-group">
 		              <label class="control-label" for="username">Username</label>
 		              <div class="controls">
-		                <input id="username" name="username" placeholder="Username" class="form-control input-lg" type="text" th:field="*{username}" th:value="${username}"/>
-		                <p class="help-block">Username can contain any letters or numbers, without spaces!</p>
+		                <input id="username" name="username" placeholder="Username can contain any letters or numbers, without spaces!" class="form-control input-lg" type="text" th:field="*{username}" th:value="${username}"/>
 		              </div>
 		            </div>
 		         
 		            <div class="control-group">
 		              <label class="control-label" for="password">Password</label>
 		              <div class="controls">
-		                <input id="password" name="password" placeholder="Password" class="form-control input-lg" type="password" th:field="*{password}" th:value="${password}"/>
-		                <p class="help-block">Password should be at least 6 characters</p>
+		                <input id="password" name="password" placeholder="Password should be at least 6 characters" class="form-control input-lg" type="password" th:field="*{password}" th:value="${password}"/>
 		              </div>
 		            </div>
 		         
 		            <div class="control-group">
 		              <label class="control-label" for="password_confirm">Password (Confirm)</label>
 		              <div class="controls">
-		                <input id="password_confirm" name="password_confirm" placeholder="Password (Confirm)" class="form-control input-lg" type="password"/>
-		                <p class="help-block">Please confirm password</p>
+		                <input id="password_confirm" name="password_confirm" placeholder="Please confirm password" class="form-control input-lg" type="password"/>
 		              </div>
 		            </div>
 		         
