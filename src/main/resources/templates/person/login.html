@@ -14,7 +14,7 @@
 	        <form id="test2" class="form-signin" th:action="@{/person/login}" th:object="${person}" method="post">
 	        
 	        	<h2 class="form-signin-heading">Please sign in</h2>
-	            <label for="inputEmail" class="sr-only"> User Name : </label>
+	            <label for="inputEmail" class="sr-only"> Username: </label>
 	            <input id="username" class="form-control" type="text" name="username" placeholder="Username" th:field="*{username}" th:value="${username}"/> 
 	            <label for="inputPassword" class="sr-only"> Password: </label>
 	            <input id="password" class="form-control" type="password" name="password" placeholder="Password" th:field="*{password}" th:value="${password}"/>
